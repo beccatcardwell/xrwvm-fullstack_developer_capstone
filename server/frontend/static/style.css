@@ -11,6 +11,20 @@ img{
   margin-right:5%;
   margin-top: 1%;
   margin-bottom: 1%;
+  padding: 2%;
+}
+
+.card .card-img-top {
+ margin-bottom: 7%;
+}
+
+.card .card-body {
+
+  padding: 0;
+}
+
+.about-header {
+  margin-bottom: 2%;
 }
 
 .row{
@@ -37,7 +51,7 @@ img{
   background-color: rgb(97, 64, 128);
   color: white;
   text-align: center;
-  margin:20px;
+  /* margin:20px; */
   padding:5px;
 }
 
