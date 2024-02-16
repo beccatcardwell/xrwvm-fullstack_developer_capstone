@@ -1,9 +1,9 @@
-img{
+img {
   width: 60%;
   align-self: center;
 }
 
-.card{
+.card {
   border: rgb(103, 102, 105) 3px solid;
   display: flex;  
   flex-direction: column;
@@ -23,7 +23,15 @@ img{
   padding: 0;
 }
 
-.about-header {
+.about-header, .contact-header {
+  margin-bottom: 2%;
+}
+
+.contact-body {
+  text-align: center;
+}
+
+.contact-header h1 {
   margin-bottom: 2%;
 }
 
@@ -137,4 +145,20 @@ img{
     border-radius:50px;
     text-align:center;
     box-shadow: 2px 2px 3px #999;  
+}
+
+.contact-card {
+  box-shadow: 10px 10px 3px 2px rgba(0, 0, 0, 0.05), 6px 6px rgba(0, 0, 0, 0.01);
+}
+
+.contact-body {
+  border-left: 1px solid black;
+  padding-left: 25%;
+  display: block;
+}
+
+.contact-title {
+  font-size: 1.25rem;
+  margin: 0.8em 0 0.2em 0;
+
 }
