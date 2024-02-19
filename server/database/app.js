@@ -63,29 +63,29 @@ app.get('/fetchDealers', async (req, res) => {
     res.json(documents)
   }
   catch (error){
-    res.status(500).json({error: error})
+    res.status(500).json({error: error.message})
   }
 });
 
 // Express route to fetch Dealers by a particular state
 app.get('/fetchDealers/:state', async (req, res) => {
   try {
-    const documents = await Dealerships.find({state: req.params.state })
+    const documents = await Dealerships.find({state: req.params.state})
     res.json(documents)
   }
   catch (error){
-    res.status(500).json({error: error})
+    res.status(500).json({error: error.message})
   }
 });
 
 // Express route to fetch dealer by a particular id
 app.get('/fetchDealer/:id', async (req, res) => {
   try {
-    const documents = await Dealerships.find({_id: req.params.id })
+    const documents = await Dealerships.find({id: req.params.id })
     res.json(documents)
   }
   catch (error){
-    res.status(500).json({error: error})
+    res.status(500).json({error: error.message})
   }
 });
 
