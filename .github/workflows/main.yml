@@ -4,11 +4,11 @@ on:
   push:
     branches: [master, main]
     paths-ignore:
-      - 'server/djangoapp/migrations'
+      - 'server/djangoapp/migrations/**'
   pull_request:
     branches: [master, main]
     paths-ignore:
-      - 'server/djangoapp/migrations'
+      - 'server/djangoapp/migrations/**'
       
 jobs:
   lint_python:
