@@ -10,7 +10,6 @@ class CarMake(models.Model):
     description = models.TextField()
     country = models.CharField(max_length=100)
 
-
     def __str__(self):
         return str(self.name)
 
@@ -35,7 +34,6 @@ class CarModel(models.Model):
             MinValueValidator(2015)
         ]
     )
-
 
     def __str__(self):
         return str(self.name)
