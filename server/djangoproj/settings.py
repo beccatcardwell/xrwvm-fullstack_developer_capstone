@@ -28,14 +28,15 @@ SECRET_KEY =\
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+THEIA_URL = 'https://beccatcardwe-8000.'\
+    'theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai/'
+
 ALLOWED_HOSTS = [
     'localhost', '127.0.0.1',
-    'https://beccatcardwe-8000.'\
-    'theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai/'
+    THEIA_URL
 ]
 CSRF_TRUSTED_ORIGINS = [
-    'https://beccatcardwe-8000.'\
-    'theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai/'
+   THEIA_URL
 ]
 
 REST_FRAMEWORK = {
