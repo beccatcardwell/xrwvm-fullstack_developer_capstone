@@ -139,7 +139,7 @@ def get_dealer_details(request, dealer_id):
 
     return JsonResponse({
         'status': 200,
-        'message': 
+        'message':
         'Bad request. Please, make sure endpoint has a valid dealer_id'
     })
 
