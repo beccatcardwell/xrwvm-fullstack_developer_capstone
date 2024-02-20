@@ -11,6 +11,7 @@ sentiment_analyzer_url = os.getenv(
     'sentiment_analyzer_url',
     default="http://localhost:5050/")
 
+
 def get_request(endpoint, **kwargs):
     '''GET backend REST API'''
     params = ""
@@ -28,6 +29,7 @@ def get_request(endpoint, **kwargs):
     except Exception as e:
         print(f"Error: {e}")
 
+
 def analyze_review_sentiments(text):
     '''Analyze text with sentiment analyzer api'''
     request_url = sentiment_analyzer_url+"analyze/"+text
@@ -43,7 +45,7 @@ def post_review(data_dict):
     '''Post new review to express.js backend'''
     request_url = backend_url+"/insert_review"
     try:
-        response = requests.post(request_url,json=data_dict)
+        response = requests.post(request_url, json=data_dict)
         print(response.json())
         return response.json()
     except Exception as e:

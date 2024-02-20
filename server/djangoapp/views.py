@@ -22,9 +22,6 @@ from .restapis import get_request, analyze_review_sentiments, post_review
 logger = logging.getLogger(__name__)
 
 
-# Create your views here.
-
-
 # Create a `login_request` view to handle sign in request
 @csrf_exempt
 def login_user(request):
@@ -47,6 +44,7 @@ def logout_request(request):
     logout(request)
     data = {"userName":""}
     return JsonResponse(data)
+
 
 @csrf_exempt
 def registration(request):
@@ -80,9 +78,10 @@ def registration(request):
         login(request, user)
         data = {"userName":username,"status":"Authenticated"}
         return JsonResponse(data)
-    
+
     data = {"userName":username,"error":"Already Registered"}
     return JsonResponse(data)
+
 
 def get_cars(request):
     '''Get all cars'''
@@ -94,7 +93,8 @@ def get_cars(request):
     cars = []
     for car_model in car_models:
         cars.append({"CarModel": car_model.name, "CarMake": car_model.car_make.name})
-    return JsonResponse({"CarModels":cars})
+    return JsonResponse({"CarModels": cars})
+
 
 def get_dealerships(request, state="All"):
     '''Update the `get_dealerships` render list of dealerships all by default,
@@ -104,9 +104,10 @@ def get_dealerships(request, state="All"):
     else:
         endpoint = "/fetchDealers/"+state
     dealerships = get_request(endpoint)
-    return JsonResponse({"status":200,"dealers":dealerships})
+    return JsonResponse({"status": 200, "dealers": dealerships})
 
-def get_dealer_reviews(request,dealer_id):
+
+def get_dealer_reviews(request, dealer_id):
     '''Create a `get_dealer_reviews` view to render the reviews of a dealer'''
     if dealer_id:
         endpoint = '/fetchReviews/dealer/' + str(dealer_id)
@@ -144,8 +145,8 @@ def add_review(request):
         data = json.loads(request.body)
         try:
             response = post_review(data)
-            return JsonResponse({"status":200, 'response': response})
+            return JsonResponse({"status": 200, 'response': response})
         except Exception as e:
-            return JsonResponse({"status":401,"message": e})
+            return JsonResponse({"status": 401, "message": e})
     else:
-        return JsonResponse({"status":403,"message":"Unauthorized"})
+        return JsonResponse({"status": 403, "message": "Unauthorized"})
